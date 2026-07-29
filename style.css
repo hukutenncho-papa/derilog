@@ -48,6 +48,7 @@ h2{
     background:#dff5df;
 
 }
+
 .day{
 
     background:white;
@@ -60,11 +61,14 @@ h2{
 
     padding:8px;
 
-    cursor:pointer;
+    overflow:hidden;
 
-    transition:.2s;
+    display:flex;
+
+    flex-direction:column;
 
 }
+
 .day-number{
 
     font-weight:bold;
@@ -73,11 +77,15 @@ h2{
 
 .sales{
 
-    margin-top:10px;
+    margin-top:auto;
 
     color:#2e7d32;
 
-    font-size:14px;
+    font-size:12px;
+
+    overflow:hidden;
+
+    white-space:nowrap;
 
 }
 
