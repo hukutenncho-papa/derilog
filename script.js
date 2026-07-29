@@ -8,36 +8,56 @@ const salesInput = document.getElementById("sales");
 
 const saveButton = document.getElementById("saveButton");
 
-const today = new Date();
+const prevMonthButton = document.getElementById("prevMonth");
 
-const year = today.getFullYear();
+const nextMonthButton = document.getElementById("nextMonth");
 
-const month = today.getMonth();
 
-let salesData = {};
+// 表示中の年月
+let currentDate = new Date();
 
+let year = currentDate.getFullYear();
+
+let month = currentDate.getMonth();
+
+
+// 保存データ読み込み
+let salesData = JSON.parse(
+    localStorage.getItem("deliLogData")
+) || {};
+
+
+// カレンダー作成
 function createCalendar(){
 
     calendar.innerHTML="";
 
+
     monthTitle.textContent =
         `${year}年 ${month+1}月`;
 
-    const lastDay =
-        new Date(year,month+1,0).getDate();
 
-    for(let day=1;day<=lastDay;day++){
+    const lastDay =
+        new Date(year, month+1, 0).getDate();
+
+
+    for(let day=1; day<=lastDay; day++){
+
 
         const cell=document.createElement("div");
 
         cell.className="day";
 
-        const dateString=
+
+        const dateString =
         `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+
 
         cell.innerHTML=`
 
-        <div class="day-number">${day}</div>
+        <div class="day-number">
+        ${day}
+        </div>
 
         <div class="sales">
         ${salesData[dateString] ? "¥"+salesData[dateString] : ""}
@@ -45,11 +65,13 @@ function createCalendar(){
 
         `;
 
+
         cell.onclick=function(){
 
             dateInput.value=dateString;
 
-        }
+        };
+
 
         calendar.appendChild(cell);
 
@@ -57,7 +79,10 @@ function createCalendar(){
 
 }
 
+
+// 登録ボタン
 saveButton.onclick=function(){
+
 
     if(dateInput.value=="" || salesInput.value==""){
 
@@ -67,12 +92,62 @@ saveButton.onclick=function(){
 
     }
 
-    salesData[dateInput.value]=salesInput.value;
+
+    salesData[dateInput.value]
+        = salesInput.value;
+
+
+    // 端末保存
+    localStorage.setItem(
+        "deliLogData",
+        JSON.stringify(salesData)
+    );
+
 
     salesInput.value="";
 
+
     createCalendar();
 
-}
+};
+
+
+
+// 前月
+prevMonthButton.onclick=function(){
+
+    month--;
+
+    if(month < 0){
+
+        month = 11;
+
+        year--;
+
+    }
+
+    createCalendar();
+
+};
+
+
+// 翌月
+nextMonthButton.onclick=function(){
+
+    month++;
+
+    if(month > 11){
+
+        month = 0;
+
+        year++;
+
+    }
+
+    createCalendar();
+
+};
+
+
 
 createCalendar();
