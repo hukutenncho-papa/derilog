@@ -8,6 +8,8 @@ const salesInput = document.getElementById("sales");
 
 const saveButton = document.getElementById("saveButton");
 
+const deleteButton = document.getElementById("deleteButton");
+
 const monthlySales =
     document.getElementById("monthlySales");
 
@@ -120,9 +122,20 @@ for(let i=0; i<firstDay; i++){
 
         cell.onclick=function(){
 
-            dateInput.value=dateString;
+    dateInput.value = dateString;
 
-        };
+
+    if(salesData[dateString]){
+
+        salesInput.value = salesData[dateString];
+
+    }else{
+
+        salesInput.value = "";
+
+    }
+
+}
 
 
         calendar.appendChild(cell);
@@ -210,3 +223,49 @@ updateMonthlySales();
 
 
 createCalendar();
+
+deleteButton.onclick=function(){
+
+    if(dateInput.value==""){
+
+        alert("削除する日付を選択してください");
+
+        return;
+
+    }
+
+
+    if(!salesData[dateInput.value]){
+
+        alert("その日の記録がありません");
+
+        return;
+
+    }
+
+
+    const result =
+    confirm("この日の記録を削除しますか？");
+
+
+    if(result){
+
+        delete salesData[dateInput.value];
+
+
+        localStorage.setItem(
+            "deliLogData",
+            JSON.stringify(salesData)
+        );
+
+
+        salesInput.value="";
+
+
+        createCalendar();
+
+        updateMonthlySales();
+
+    }
+
+};
