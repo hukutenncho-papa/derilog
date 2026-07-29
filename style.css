@@ -124,3 +124,54 @@ button:hover{
     background:#1b5e20;
 
 }
+
+/* カレンダー月移動エリア */
+.calendar-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* 月タイトル */
+.calendar-header h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+}
+
+
+/* 月移動ボタン */
+.calendar-header button {
+
+    background-color: #2e8b57;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+}
+
+
+/* 押した時 */
+.calendar-header button:active {
+
+    transform: scale(0.95);
+
+}
