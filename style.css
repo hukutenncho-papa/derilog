@@ -1,0 +1,126 @@
+body{
+
+    margin:0;
+    padding:20px;
+
+    font-family:sans-serif;
+
+    background:#f3f8f3;
+
+}
+
+.container{
+
+    max-width:700px;
+    margin:auto;
+
+}
+
+h1{
+
+    text-align:center;
+    color:#2e7d32;
+
+}
+
+h2{
+
+    text-align:center;
+
+}
+
+.calendar{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:5px;
+
+    margin-bottom:25px;
+
+}
+
+.day{
+
+    background:white;
+
+    border:1px solid #cccccc;
+
+    border-radius:10px;
+
+    min-height:80px;
+
+    padding:8px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.day:hover{
+
+    background:#dff5df;
+
+}
+
+.day-number{
+
+    font-weight:bold;
+
+}
+
+.sales{
+
+    margin-top:10px;
+
+    color:#2e7d32;
+
+    font-size:14px;
+
+}
+
+.form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+input{
+
+    padding:10px;
+
+    border-radius:8px;
+
+    border:1px solid #bbb;
+
+}
+
+button{
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2e7d32;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#1b5e20;
+
+}
