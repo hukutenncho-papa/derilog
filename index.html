@@ -28,17 +28,66 @@
     <h1>デリログ</h1>
 
 
-<div class="calendar-header">
+    <div class="calendar-header">
 
-    <button id="prevMonth">
-        ← 前月
-    </button>
+        <button id="prevMonth">
+            ← 前月
+        </button>
 
-    <h2 id="monthTitle"></h2>
+        <h2 id="monthTitle"></h2>
 
-    <button id="nextMonth">
-        翌月 →
-    </button>
+        <button id="nextMonth">
+            翌月 →
+        </button>
+
+    </div>
+
+
+    <div class="monthly-summary">
+
+        <div>
+            今月売上
+        </div>
+
+        <div id="monthlySales">
+            0K
+        </div>
+
+    </div>
+
+
+    <div class="week">
+
+        <div>日</div>
+        <div>月</div>
+        <div>火</div>
+        <div>水</div>
+        <div>木</div>
+        <div>金</div>
+        <div>土</div>
+
+    </div>
+
+
+    <div id="calendar" class="calendar"></div>
+
+
+    <div class="form">
+
+        <label>日付</label>
+        <input type="date" id="date">
+
+
+        <label>売上（円）</label>
+        <input type="number" id="sales">
+
+
+        <button id="saveButton">
+            登録
+        </button>
+
+    </div>
+
 
 </div>
 <div class="week">
