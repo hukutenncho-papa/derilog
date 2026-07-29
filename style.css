@@ -81,14 +81,15 @@ h2{
 
     color:#2e7d32;
 
-    font-size:12px;
+    font-size:11px;
 
-    overflow:hidden;
+    font-weight:bold;
+
+    text-align:center;
 
     white-space:nowrap;
 
 }
-
 .form{
 
     display:flex;
