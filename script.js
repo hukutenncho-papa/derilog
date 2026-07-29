@@ -75,7 +75,7 @@ for(let i=0; i<firstDay; i++){
         </div>
 
         <div class="sales">
-        ${salesData[dateString] ? "¥"+salesData[dateString] : ""}
+       ${salesData[dateString] ? formatMoney(salesData[dateString]) : ""}
         </div>
 
         `;
