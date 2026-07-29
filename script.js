@@ -8,6 +8,9 @@ const salesInput = document.getElementById("sales");
 
 const saveButton = document.getElementById("saveButton");
 
+const monthlySales =
+    document.getElementById("monthlySales");
+
 const prevMonthButton = document.getElementById("prevMonth");
 
 const nextMonthButton = document.getElementById("nextMonth");
@@ -34,6 +37,32 @@ function formatMoney(value){
 
 }
 
+function updateMonthlySales(){
+
+    let total = 0;
+
+
+    Object.keys(salesData).forEach(function(date){
+
+        const d = new Date(date);
+
+
+        if(
+            d.getFullYear() === year &&
+            d.getMonth() === month
+        ){
+
+            total += Number(salesData[date]);
+
+        }
+
+    });
+
+
+    monthlySales.textContent =
+        (total / 1000).toFixed(1) + "K";
+
+}
 
 // カレンダー作成
 function createCalendar(){
@@ -97,6 +126,7 @@ for(let i=0; i<firstDay; i++){
 
 
         calendar.appendChild(cell);
+        updateMonthlySales();
 
     }
 
@@ -132,6 +162,8 @@ saveButton.onclick=function(){
 
     createCalendar();
 
+updateMonthlySales();
+
 };
 
 
@@ -151,6 +183,8 @@ prevMonthButton.onclick=function(){
 
     createCalendar();
 
+updateMonthlySales();
+
 };
 
 
@@ -168,6 +202,8 @@ nextMonthButton.onclick=function(){
     }
 
     createCalendar();
+
+updateMonthlySales();
 
 };
 
