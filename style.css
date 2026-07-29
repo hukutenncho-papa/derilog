@@ -175,3 +175,33 @@ button:hover{
     transform: scale(0.95);
 
 }
+
+.week{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:5px;
+
+    margin-bottom:5px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+
+.week div:first-child{
+
+    color:#e53935;
+
+}
+
+
+.week div:last-child{
+
+    color:#1e88e5;
+
+}
