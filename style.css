@@ -254,3 +254,11 @@ button:hover{
     background:#b71c1c;
 
 }
+
+.day.selected{
+
+    background:#c8e6c9;
+
+    border:2px solid #2e7d32;
+
+}
