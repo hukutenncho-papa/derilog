@@ -212,3 +212,32 @@ button:hover{
     color:#1e88e5;
 
 }
+
+.monthly-summary{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+
+#monthlySales{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#2e7d32;
+
+    margin-top:5px;
+
+}
