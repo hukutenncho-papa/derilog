@@ -103,15 +103,16 @@ for(let i=0; i<firstDay; i++){
 
 cell.className = "day";
 
+
+const dateString =
+`${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+
+
 if(dateString === selectedDate){
 
     cell.classList.add("selected");
 
 }
-
-        const dateString =
-        `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
-
 
         cell.innerHTML=`
 
