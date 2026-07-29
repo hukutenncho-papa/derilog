@@ -25,6 +25,7 @@ let year = currentDate.getFullYear();
 
 let month = currentDate.getMonth();
 
+let selectedDate = "";
 
 // 保存データ読み込み
 let salesData = JSON.parse(
@@ -98,10 +99,15 @@ for(let i=0; i<firstDay; i++){
     for(let day=1; day<=lastDay; day++){
 
 
-        const cell=document.createElement("div");
+        const cell = document.createElement("div");
 
-        cell.className="day";
+cell.className = "day";
 
+if(dateString === selectedDate){
+
+    cell.classList.add("selected");
+
+}
 
         const dateString =
         `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
@@ -122,8 +128,9 @@ for(let i=0; i<firstDay; i++){
 
         cell.onclick=function(){
 
-    dateInput.value = dateString;
+    selectedDate = dateString;
 
+    dateInput.value = dateString;
 
     if(salesData[dateString]){
 
@@ -134,6 +141,8 @@ for(let i=0; i<firstDay; i++){
         salesInput.value = "";
 
     }
+
+    createCalendar();
 
 }
 
