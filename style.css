@@ -241,3 +241,16 @@ button:hover{
     margin-top:5px;
 
 }
+
+#deleteButton{
+
+    background:#d32f2f;
+
+}
+
+
+#deleteButton:hover{
+
+    background:#b71c1c;
+
+}
