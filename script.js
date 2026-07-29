@@ -40,6 +40,21 @@ function createCalendar(){
     const lastDay =
         new Date(year, month+1, 0).getDate();
 
+// 月初の曜日を取得
+const firstDay =
+    new Date(year, month, 1).getDay();
+
+
+// 空白セルを追加
+for(let i=0; i<firstDay; i++){
+
+    const blank = document.createElement("div");
+
+    blank.className="blank";
+
+    calendar.appendChild(blank);
+
+}
 
     for(let day=1; day<=lastDay; day++){
 
