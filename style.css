@@ -41,6 +41,13 @@ h2{
 
 }
 
+
+
+.day:hover{
+
+    background:#dff5df;
+
+}
 .day{
 
     background:white;
@@ -49,7 +56,7 @@ h2{
 
     border-radius:10px;
 
-    min-height:80px;
+    aspect-ratio:1 / 1;
 
     padding:8px;
 
@@ -58,13 +65,6 @@ h2{
     transition:.2s;
 
 }
-
-.day:hover{
-
-    background:#dff5df;
-
-}
-
 .day-number{
 
     font-weight:bold;
