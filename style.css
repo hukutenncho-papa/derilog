@@ -262,3 +262,9 @@ button:hover{
     border:2px solid #2e7d32;
 
 }
+
+.day.selected .day-number{
+
+    color:#2e7d32;
+
+}
