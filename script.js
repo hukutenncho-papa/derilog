@@ -16,6 +16,9 @@ const monthlySales =
 const workingDays =
     document.getElementById("workingDays");
 
+const averageSales =
+    document.getElementById("averageSales");
+
 const prevMonthButton = document.getElementById("prevMonth");
 
 const nextMonthButton = document.getElementById("nextMonth");
@@ -73,6 +76,17 @@ let days = 0;
 
 workingDays.textContent =
     days + "日";
+    
+    if(days > 0){
+
+    averageSales.textContent =
+        ((total / days) / 1000).toFixed(1) + "K";
+
+}else{
+
+    averageSales.textContent = "0K";
+
+}
 
 }
 
