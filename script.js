@@ -13,6 +13,9 @@ const deleteButton = document.getElementById("deleteButton");
 const monthlySales =
     document.getElementById("monthlySales");
 
+const workingDays =
+    document.getElementById("workingDays");
+
 const prevMonthButton = document.getElementById("prevMonth");
 
 const nextMonthButton = document.getElementById("nextMonth");
@@ -43,6 +46,7 @@ function formatMoney(value){
 function updateMonthlySales(){
 
     let total = 0;
+let days = 0;
 
 
     Object.keys(salesData).forEach(function(date){
@@ -51,19 +55,24 @@ function updateMonthlySales(){
 
 
         if(
-            d.getFullYear() === year &&
-            d.getMonth() === month
-        ){
+    d.getFullYear() === year &&
+    d.getMonth() === month
+){
 
-            total += Number(salesData[date]);
+    total += Number(salesData[date]);
 
-        }
+    days++;
+
+}
 
     });
 
 
     monthlySales.textContent =
         (total / 1000).toFixed(1) + "K";
+
+workingDays.textContent =
+    days + "日";
 
 }
 
