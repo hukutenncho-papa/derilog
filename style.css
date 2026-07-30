@@ -215,6 +215,12 @@ button:hover{
 
 .monthly-summary{
 
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
     background:white;
 
     border-radius:15px;
@@ -223,14 +229,13 @@ button:hover{
 
     margin-bottom:15px;
 
-    text-align:center;
-
     box-shadow:0 2px 5px rgba(0,0,0,0.1);
 
 }
 
 
-#monthlySales{
+#monthlySales,
+#workingDays{
 
     font-size:28px;
 
@@ -266,5 +271,11 @@ button:hover{
 .day.selected .day-number{
 
     color:#2e7d32;
+
+}
+
+.summary-item{
+
+    text-align:center;
 
 }
